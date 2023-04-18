@@ -3,7 +3,7 @@ export default function createReportObject(employeesList) {
 
   for (const department in employeesList) {
     if (object.hasOwnProperty.call(employeesList, departmentName)) {
-	    allEmployees[department] = [...employeesList[department]];
+	    allEmployees[department] = employeesList[department];
     }
   }
 
