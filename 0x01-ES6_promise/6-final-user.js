@@ -4,17 +4,17 @@ import uploadPhoto from './5-photo-reject';
 export default async function handleProfileSignup(firstName, lastName, fileName) {
   const promises = [
     signUpUser(firstName, lastName),
-    uploadPhoto(fileName)
+    uploadPhoto(fileName),
   ];
 
   return Promise.allSettled(promises)
-    .then((res) => {
-      return res.map((res) => ({
-        status: res.status,
-        value: res.status === 'fulfilled' ? res.value : res.reason
-      }));
-    })
-    .catch(() => {
+    .then((res) => (
+      res.map((outs) => ({
+        status: outs.status,
+        value: outs.status === 'fulfilled' ? outs.value : String(outs.reason),
+      }))
+    ));
+  /* .catch(() => {
       return [{ status: 'rejected', value: 'Signup system offline' }];
-    });
+    }); */
 }
