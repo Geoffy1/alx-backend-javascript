@@ -5,4 +5,3 @@ export default function iterateThroughObject(reportWithIterator) {
   }
   return myEmployees.slice(0, -3); // remove trailing ' | '
 }
-
