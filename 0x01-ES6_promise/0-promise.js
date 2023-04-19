@@ -1,1 +1,3 @@
-getResponseFromAPI.then(resolve, reject)
+/*getResponseFromAPI.then(resolve, reject)*/
+export default function getResponseFromAPI() {
+  return new Promise(resolve, reject) => {});
