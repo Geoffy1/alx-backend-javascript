@@ -1,0 +1,1 @@
+getResponseFromAPI.then(resolve, reject)
