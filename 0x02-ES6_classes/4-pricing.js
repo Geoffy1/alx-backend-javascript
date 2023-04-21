@@ -1,33 +1,44 @@
-export default class Currency {
+import Currency from './3-currency';
+
+export default class Pricing {
   constructor(code, name) {
-    this._code = this._validateString(code, 'code');
-    this._name = this._validateString(name, 'name');
+    this._code = amount;
+    this._currency = currency;
   }
 
-  get code() {
-    return this._code;
+  get amount() {
+    return this._amount;
   }
 
-  set code(newCode) {
-    this._code = this._validateString(newCode, 'code');
+  set amount(newAmount) {
+    if (typeof newAmount !== 'number') {
+      throw new TypeError('amount must be a number')
+    }
+    this._amount = newAmount;
   }
 
-  get name() {
-    return this._name;
+  get currency() {
+    return this._currency;
   }
 
-  set name(newName) {
-    this._name = this._validateString(newName, 'name');
+  set currency(newCurrency) {
+    if (!(newCurrency instanceof Currency)) {
+      throw new TypeError('currency must be a Currency');
+    }
+    this._currency = newCurrency;
   }
 
   displayFullCurrency() {
-    return `${this._name} (${this._code})`;
+    return `${this.amount} ${this.currency.name}(${this.currency.code})`;
   }
 
-  _validateString(value, attributeName) {
-    if (typeof value !== 'string') {
-      throw new TypeError(`${attributeName} must be a string`);
+  static convertPrice(amount, conversionRate) {
+    if (typeof amount !== 'number') {
+      throw new TypeError(`amount must be a number`);
     }
-    return value;
+    if (typeof conversionRate !== 'number') {
+      throw new TypeError(`conversionRate must be a number`);
+    }
+    return amount * conversionRate;
   }
 }
