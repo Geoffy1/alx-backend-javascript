@@ -1,11 +1,4 @@
 export default class HolbertonCourse {
-  /**
-   * Implement a class named HolbertonCourse
-   * @parameter {String} name - class name.
-   * @parameter {Number} length - class lduration.
-   * @parameter {String} students - no of students enrolled.
-   */
-  
   constructor(name, length, students) {
     if (typeof name !== 'string') {
       throw new TypeError('Name must be a string');
@@ -36,7 +29,9 @@ export default class HolbertonCourse {
   }
 
   set length(newLength) {
-    if (!Number.isInteger(newLength) throw new TypeError('Length must be a number');
+    if (!Number.isInteger(newLength) {
+      throw new TypeError('Length must be a number');
+    }
     this._length = newLength;
   }
 
