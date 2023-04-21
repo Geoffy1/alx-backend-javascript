@@ -1,15 +1,15 @@
 export default class Currency {
   constructor(code, name) {
-    this._code = this._validateString(code, "code");
-    this._name = this._validateString(name, "name");
+    this._code = code;
+    this._name = name;
   }
 
-  get name () {
+  get code() {
     return this._code;
   }
 
   set code(newCode) {
-    this._code = this._validateString(newCode, "code");
+    this._code = newCode;
   }
 
   get name() {
@@ -17,18 +17,10 @@ export default class Currency {
   }
 
   set name(newName) {
-    this._name = this._validateString(newName, "name");
+    this._name = newName;
   }
 
   displayFullCurrency() {
     return `${this._name} (${this._code})`;
   }
-
-  _validateString(value, attributeName) {
-    if (typeof value !== "string") {
-      throw new TypeError(`${attributeName} must be a string`);
-    }
-    return value;
-  }
 }
-
