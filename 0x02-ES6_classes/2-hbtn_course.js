@@ -1,7 +1,14 @@
 export default class HolbertonCourse {
+  /**
+   * Implement a class named HolbertonCourse
+   * @parameter {String} name - class name.
+   * @parameter {Number} length - class lduration.
+   * @parameter {String} students - no of students enrolled.
+   */
+  
   constructor(name, length, students) {
     if (typeof name !== 'string') throw new TypeError('Name must be a string');
-    if (!Number.isInteger(length) throw new TypeError('Length must be a number');
+    if (typeof length !== 'number') throw new TypeError('Length must be a number');
     if (!Array.isArray(student) throw new TypeError('Students must be an array of strings');
 
     this._name = name;
