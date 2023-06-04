@@ -1,4 +1,4 @@
-/* eslint-disable cls-methods-use-this */
+/* eslint-disable class-methods-use-this */
 import Car from './10-car';
 
 export default class EVCar extends Car {
