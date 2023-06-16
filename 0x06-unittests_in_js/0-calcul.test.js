@@ -17,4 +17,10 @@ describe('calculateNumber', () => {
   it("rounding down a's floating point fractional number", () => {
     assert.strictEqual(calculateNumber(1.5, 3.7), 6);
   });
+  
+  it('rounding of b', () => {
+        assert.equal(calculateNumber(3, 1), 4);
+        assert.equal(calculateNumber(3.7, 1), 5);
+        assert.equal(calculateNumber(3.7, 1.5), 6);
+    });
 });
